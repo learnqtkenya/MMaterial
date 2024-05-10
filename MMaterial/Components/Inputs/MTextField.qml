@@ -236,8 +236,9 @@ Rectangle {
                 verticalCenter: _mainContainer.verticalCenter
             }
 
-            color: Theme.text.disabled
+            color: Theme.action.active
             visible: iconData
+            interactive: true
             size: !visible ? 0 : _root.height * 0.3
         }
 
