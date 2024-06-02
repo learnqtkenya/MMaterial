@@ -13,6 +13,7 @@ Rectangle {
 
     property string name
     property string role
+    property IconData logoIconData
 
     property int currentIndex: -1
 
@@ -85,6 +86,7 @@ Rectangle {
             subtitle.text: _root.role
 
             model: _root.sidebarItems
+            logo.iconData: _root.logoIconData ?? Icons.heavy.logo
         }
     }
 
@@ -93,6 +95,7 @@ Rectangle {
 
         CompactSidebar{
             model: _root.sidebarItems
+            logo.iconData: _root.logoIconData ?? Icons.heavy.logo
         }
     }
 
