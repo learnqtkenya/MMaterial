@@ -15,10 +15,11 @@ Item {
         GridLayout {
             id: grid
 
-            property int preferredColumnSpan: Window.width > 800 ? 1 : 2
+            property int preferredColumnSpan: Window.width > 900 ? 1 : 2
 
             Layout.preferredHeight: parent.height * 0.66
             Layout.fillWidth: true
+            uniformCellWidths: true
 
             columns: 4
 

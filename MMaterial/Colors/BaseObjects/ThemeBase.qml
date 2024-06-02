@@ -1,6 +1,8 @@
 import QtQuick
 
 QtObject{
+    id: root
+
     required property PaletteBasic primary
     required property PaletteBasic secondary
     required property PaletteBasic info
@@ -20,5 +22,14 @@ QtObject{
     property PaletteBasic defaultNeutral: PaletteBasic{
         main: text.primary
         contrastText: background.main
+    }
+
+    property PaletteBasic passive: PaletteBasic{
+        darker: root.main.transparent.p32
+        dark: root.main.transparent.p16
+        main: text.primary
+        light: root.main.transparent.p16
+        lighter: root.main.transparent.p32
+        contrastText: text.secondary
     }
 }

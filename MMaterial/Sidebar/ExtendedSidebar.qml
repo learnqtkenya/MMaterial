@@ -4,7 +4,7 @@ import QtQuick.Layouts
 
 import MMaterial
 
-Rectangle {
+Item {
     id: _root
 
     property alias logo: _logo
@@ -16,18 +16,6 @@ Rectangle {
 
     implicitWidth: 280
     implicitHeight: parent.height
-    color: Theme.background.main
-
-    layer{
-        enabled: true
-        effect: MultiEffect{
-            shadowEnabled: true
-            shadowBlur: 3
-            shadowHorizontalOffset: 2
-            shadowVerticalOffset: 5
-
-        }
-    }
 
     ColumnLayout {
         anchors {
@@ -113,6 +101,7 @@ Rectangle {
 
             spacing: Size.pixel4
             clip: true
+            currentIndex: SidebarData.currentIndex
 
             section {
                 property: "category"

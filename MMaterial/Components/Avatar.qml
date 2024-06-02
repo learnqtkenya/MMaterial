@@ -1,34 +1,78 @@
 import QtQuick 
 import QtQuick.Layouts
 
-import MMaterial
+import MMaterial as MMaterial
 
 Rectangle {
-    id: _root
+    id: root
+
+    readonly property bool isEmpty: image.source.toString() === ""
+
+    property alias source: image.source
+    property real size: MMaterial.Size.pixel48
 
     property string title: "A"
-    property PaletteBasic accent: Theme.primary
+    property MMaterial.PaletteBasic accent: MMaterial.Theme.primary
 
-    color: enabled ? accent.main : Theme.action.disabled
-    radius: 100
+    color: enabled ? accent.main : MMaterial.Theme.action.disabled
+    radius: height / 2
 
-    implicitHeight: Size.pixel48
-    implicitWidth: Size.pixel48
+    implicitHeight: root.size
+    implicitWidth: root.size
 
-    Subtitle2 {
-        id: _title
+    states: [
+        State {
+            name: "image"
+            when: !root.isEmpty
 
-        anchors.centerIn: _root
+            PropertyChanges { target: image; opacity: 1 }
+            PropertyChanges { target: title; opacity: 0 }
+        },
+
+        State {
+            name: "noImage"
+            when: true
+
+            PropertyChanges { target: image; opacity: 0 }
+            PropertyChanges { target: title; opacity: 1 }
+        }
+    ]
+
+    transitions: [
+        Transition {
+            from: "*"
+            to: "*"
+            NumberAnimation { properties: "opacity"; duration: 450 }
+        }
+    ]
+
+    SequentialAnimation {
+        id: transitionAnimation
+    }
+
+    MMaterial.Subtitle2 {
+        id: title
+
+        anchors.centerIn: root
 
         verticalAlignment: Qt.AlignVCenter
         horizontalAlignment: Qt.AlignHCenter
 
-        color: _root.accent.contrastText
-        text: _root.title.length >= 1 ?_root.title[0] : ""
+        color: root.accent.contrastText
+        text: root.title.length >= 1 ?root.title[0] : ""
+        visible: opacity
 
         font {
-            pixelSize: _root.height * 0.4
+            pixelSize: root.height * 0.4
             capitalization: Font.AllUppercase
         }
+    }
+
+    MMaterial.MaskedImage {
+        id: image
+
+        anchors.fill: root
+        visible: opacity
+        radius: root.radius
     }
 }

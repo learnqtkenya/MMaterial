@@ -34,10 +34,11 @@ QtObject{
         readonly property IconData pages: IconData { path: _heavyRoot.iconBasePath + "pages.svg"; type: IconData.Heavy }
         readonly property IconData gamepad: IconData { path: _heavyRoot.iconBasePath + "gamepad.svg"; type: IconData.Heavy }
         readonly property IconData edit: IconData { path: _heavyRoot.iconBasePath + "edit.svg"; type: IconData.Heavy }
-
         readonly property IconData info: IconData { path: _heavyRoot.iconBasePath + "info.svg"; type: IconData.Heavy }
         readonly property IconData success: IconData { path: _heavyRoot.iconBasePath + "success.svg"; type: IconData.Heavy }
         readonly property IconData alert: IconData { path: _heavyRoot.iconBasePath + "alert.svg"; type: IconData.Heavy }
+        readonly property IconData dashedCircle: IconData { path: _heavyRoot.iconBasePath + "dashedCircle.svg"; type: IconData.Heavy }
+        readonly property IconData addPhoto: IconData { path: _heavyRoot.iconBasePath + "addPhoto.svg"; type: IconData.Heavy }
 
         function getAll() : list<string> {
             return _root.getPropertyNames(this);

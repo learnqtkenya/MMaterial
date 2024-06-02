@@ -18,7 +18,7 @@ IconBase {
             effect: MultiEffect {
                 colorizationColor: _root.color
                 colorization: 1
-                brightness: 0.9
+                brightness: 0.4
             }
         }
     }

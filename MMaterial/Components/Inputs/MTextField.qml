@@ -23,7 +23,7 @@ Rectangle {
     implicitHeight: 56 * Size.scale
     implicitWidth: (Size.format == Size.Format.Extended ? 319 : 200) * Size.scale
 
-    radius: 8
+    radius: Size.pixel8
 
     border {
         width: _root.type === MTextField.Type.Outlined ? 1 : 0

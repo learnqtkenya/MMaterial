@@ -10,16 +10,23 @@ Checkable {
 
     property alias icon: _icon
     property alias text: _title.text
-    property alias model: _repeater.model
+    property alias model: _listView.model
     property alias list: _listView
 
     property bool isOpen: false
 
-    function selectItem() : void {
+    function selectItem(subindex) : void {
         if(typeof index !== "undefined")
             ListView.view.currentIndex = index;
         else if(typeof ObjectModel.index !== "undefined")
             ListView.view.currentIndex = ObjectModel.index;
+
+        if (ListView.view) {
+            SidebarData.currentIndex =ListView.view.currentIndex;
+
+            if (subindex)
+                SidebarData.currentSubIndex = subindex;
+        }
     }
 
     implicitWidth: ListView.view ? ListView.view.width : 0
@@ -31,7 +38,6 @@ Checkable {
     state: "checked"
 
     onVisibleChanged: { if(_contextMenu.opened){ _contextMenu.close(); }}
-    onCheckedChanged: if(!checked){ _listView.currentIndex = -1; }
     onClicked: {
         if(_root.model.length > 0)
             _contextMenu.open();
@@ -116,24 +122,7 @@ Checkable {
         id: _contextMenu
 
         x: _root.x + _root.width
-
-        Repeater {
-            id: _repeater
-
-            ListItem {
-                property var modelItem: _root.model[index]
-
-                text: modelItem.text
-                width: _listView.width
-
-                onClicked: {
-                    _root.selectItem();
-                    modelItem.onClicked();
-                    _contextMenu.close();
-                }
-            }
-
-        }
+        currentIndex: _root.checked ? SidebarData.currentSubIndex : -1
 
         background: Rectangle {
             radius: 12
@@ -164,6 +153,19 @@ Checkable {
                 currentIndex: _contextMenu.currentIndex
 
                 ScrollIndicator.vertical: ScrollIndicator {}
+
+                delegate: ListItem {
+                    property var modelItem: _root.model[index]
+
+                    text: modelItem.text
+                    width: _listView.width
+
+                    onClicked: {
+                        _root.selectItem(index);
+                        modelItem.onClicked();
+                        _contextMenu.close();
+                    }
+                }
             }
         }
     }

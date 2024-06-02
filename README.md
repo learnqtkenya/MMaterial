@@ -6,12 +6,12 @@ The purpose of the library is to simplify everyday Qt use, to make apps look stu
 And to learn and improve along the way! All contributions (comments and code) are very welcome.
 
 ## To-do :white_check_mark:
-- [ ] Menu
+- [x] Menu
 - [ ] Provide documentation
 - [ ] Improve settings
 - [ ] Add transitions
 - [ ] Chips
-- [ ] Avatars
+- [x] Avatars
 - [ ] Calendar
 - [ ] Clock
 - [ ] Stepper
@@ -28,3 +28,4 @@ https://markostanojevic12.github.io/appMaterialTester.html
 
 ## Dependencies :dependabot:
 Qt6::Quick, Qt::Gui
+Since Tag 1.1 (Qt 6.7+)

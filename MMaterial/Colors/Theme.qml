@@ -27,4 +27,5 @@ ThemeBase{
     action: currentTheme?.action ?? null
     common: currentTheme?.common ?? null
     defaultNeutral: currentTheme?.defaultNeutral ?? null
+    passive: currentTheme?.passive ?? null
 }

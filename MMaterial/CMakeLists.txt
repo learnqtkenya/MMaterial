@@ -49,12 +49,17 @@ list(APPEND MODULE_ASSETS
     ${SVG_PATH}/gamepad.svg
     ${SVG_PATH}/settings.svg
     ${SVG_PATH}/edit.svg
+    ${SVG_PATH}/dashedCircle.svg
+    ${SVG_PATH}/addPhoto.svg
 
     # Images
     ${PNG_PATH}/programmer-female.png
     ${PNG_PATH}/programmer-female2.png
     ${PNG_PATH}/programmer-male.png
     ${PNG_PATH}/programmer-male2.png
+    ${PNG_PATH}/abstract_futuristic_3D_shape_1.jpeg
+    ${PNG_PATH}/abstract_futuristic_3D_shape_2.jpeg
+    ${PNG_PATH}/abstract_futuristic_3D_shape_3.jpeg
 )
 
 list(APPEND MODULE_QML_FILES
@@ -127,6 +132,8 @@ list(APPEND MODULE_QML_FILES
     Components/MRectangle.qml
     Components/MBorder.qml
     Components/CornerRadii.qml
+    Components/Inputs/AvatarInput.qml
+    Components/Common/MaskedImage.qml
 
     # Settings
     Settings/Size.qml
@@ -152,6 +159,7 @@ list(APPEND MODULE_QML_FILES
     Sidebar/SidebarSeparator.qml
     Sidebar/ExtendedSidebar.qml
     Sidebar/SidebarItem.qml
+    Sidebar/SidebarData.qml
 
     # Lists
     Lists/ListItem.qml
@@ -166,6 +174,18 @@ list(APPEND MODULE_QML_FILES
     # Animations
     Animations/EasedAnimation.qml
     Animations/ElasticAnimation.qml
+
+    # Menu
+    Components/Menu/Menu.qml
+    Components/Menu/MenuItem.qml
+    Components/Menu/MenuSeparator.qml
+
+    # Dialogs
+    Components/Dialogs/Dialog.qml
+    Components/Dialogs/DialogButtonBox.qml
+    Components/Dialogs/LargeImageDialog.qml
+    Components/Dialogs/MediumImageDialog.qml
+    Components/Dialogs/InputDialog.qml
 )
 
 set_source_files_properties(
@@ -185,6 +205,8 @@ set_source_files_properties(
     Icons/Icons.qml
     Icons/Images.qml
     Settings/Size.qml
+    Sidebar/SidebarData.qml
+
     PROPERTIES QT_QML_SINGLETON_TYPE TRUE
 )
 

@@ -22,7 +22,6 @@ qt_add_qml_module(appMaterialTester
         Showcase/ColorShowcase/ColorShowcase.qml
         Showcase/ColorShowcase/PaletteBasicView.qml
         Showcase/ColorShowcase/ColorRect.qml
-        Showcase/AvatarShowcase/AvatarShowcase.qml
         Showcase/BadgeShowcase.qml
         Showcase/AccordionShowcase.qml
         Showcase/ButtonShowcase/ButtonShowcase.qml
@@ -63,7 +62,10 @@ qt_add_qml_module(appMaterialTester
         Showcase/SliderShowcase.qml
         Showcase/RectangleShowcase.qml
         Showcase/TabShowcase/TabShowcase.qml
+        Showcase/MenuShowcase.qml
         Components/Sidebar/CustomSidebar.qml
+        Showcase/AvatarShowcase.qml
+        Showcase/DialogShowcase.qml
 
     SOURCES
         DevTools/FileWatcher.h

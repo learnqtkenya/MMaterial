@@ -3,7 +3,6 @@ import "../"
 import "../../Settings"
 
 BaseText {
-    lineHeight: 1.5
     wrapMode: Text.WordWrap
 
     font {

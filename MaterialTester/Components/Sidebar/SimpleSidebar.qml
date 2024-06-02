@@ -9,9 +9,6 @@ Sidebar {
     name: "John Doe"
     role: "Admin"
 
-    extendedSidebar.list.currentIndex: -1;
-    compactSidebar.list.currentIndex: -1;
-
     SidebarItem {
         text: "Project";
         icon: Icons.light.info;
@@ -21,43 +18,14 @@ Sidebar {
     }
 
     SidebarItem {
-        text: "Icons";
-        icon: Icons.light.logo;
+        text: "Core";
+        icon: Icons.light.settings;
         category: "components"
-
-        onClicked: () => { showcaseLoader.sourceComponent = iconShowcase }
-    }
-
-    SidebarItem {
-        text: "Fonts";
-        icon: Icons.light.font;
-        category: "components"
-
-        onClicked: () => { showcaseLoader.sourceComponent = fontShowcase }
-    }
-
-    SidebarItem {
-        text: "Colors";
-        icon: Icons.light.palette;
-        category: "components"
-
-        onClicked: () => { showcaseLoader.sourceComponent = colorShowcase }
-    }
-
-    SidebarItem {
-        text: "Badge";
-        icon: Icons.light.verified;
-        category: "components"
-
-        onClicked: () => { showcaseLoader.sourceComponent = badgeShowcase }
-    }
-
-    SidebarItem {
-        text: "Accordion";
-        icon: Icons.light.star;
-        category: "components"
-
-        onClicked: () => { showcaseLoader.sourceComponent = accordionShowcase }
+        model: [
+            {text : "Icons", onClicked: function(){ showcaseLoader.sourceComponent = iconShowcase}},
+            {text : "Fonts", onClicked: function(){ showcaseLoader.sourceComponent = fontShowcase}},
+            {text : "Colors", onClicked: function(){ showcaseLoader.sourceComponent = colorShowcase }},
+        ];
     }
 
     SidebarItem {
@@ -76,20 +44,6 @@ Sidebar {
     }
 
     SidebarItem {
-        text: "Alerts";
-        icon: Icons.light.alert;
-        category: "components"
-        onClicked: () => { showcaseLoader.sourceComponent = alertShowcase }
-    }
-
-    SidebarItem {
-        text: "List Items";
-        icon: Icons.light.list;
-        category: "components"
-        onClicked: () => { showcaseLoader.sourceComponent = listItemShowcase }
-    }
-
-    SidebarItem {
         text: "Pagination";
         icon: Icons.light.pages;
         category: "components"
@@ -102,35 +56,38 @@ Sidebar {
     }
 
     SidebarItem {
-        text: "Progress";
-        icon: Icons.light.stonks;
-        category: "components"
-        onClicked: () => { showcaseLoader.sourceComponent = progressShowcase }
-    }
-
-    SidebarItem {
-        text: "Inputs";
+        text: "Controls";
         icon: Icons.light.edit;
         category: "components"
         model: [
-            {text : "TextField", onClicked: function(){ showcaseLoader.sourceComponent = textFieldShowcase}},
-            {text : "Dropdown", onClicked: function(){ showcaseLoader.sourceComponent = dropdownShowcase}}
+            {text : "ListItems", onClicked: function(){ showcaseLoader.sourceComponent = listItemShowcase}},
+            {text : "Progress", onClicked: function(){ showcaseLoader.sourceComponent = progressShowcase}},
+            {text : "TextField", onClicked: function(){ showcaseLoader.sourceComponent = textFieldShowcase }},
+            {text : "Dropdown", onClicked: function(){ showcaseLoader.sourceComponent = dropdownShowcase }},
+            {text : "Slider", onClicked: function(){ showcaseLoader.sourceComponent = sliderShowcase }},
+            {text : "Menu", onClicked: function(){ showcaseLoader.sourceComponent = menuShowcase }},
         ];
     }
 
     SidebarItem {
-        text: "Slider";
-        icon: Icons.light.stonks;
+        text: "Notifications";
+        icon: Icons.light.send;
         category: "components"
-
-        onClicked: () => { showcaseLoader.sourceComponent = sliderShowcase }
+        model: [
+            {text : "Alerts", onClicked: function(){ showcaseLoader.sourceComponent = alertShowcase}},
+            {text : "Dialogs", onClicked: function(){ showcaseLoader.sourceComponent = dialogShowcase}},
+        ];
     }
 
     SidebarItem {
-        text: "Rectangle";
-        icon: Icons.light.stonks;
+        text: "Other";
+        icon: Icons.light.list;
         category: "components"
-
-        onClicked: () => { showcaseLoader.sourceComponent = rectangleShowcase }
+        model: [
+            {text : "Badge", onClicked: function(){ showcaseLoader.sourceComponent = badgeShowcase}},
+            {text : "Accordion", onClicked: function(){ showcaseLoader.sourceComponent = accordionShowcase}},
+            {text : "Avatar", onClicked: function(){ showcaseLoader.sourceComponent = avatarShowcase }},
+            {text : "Rectangle", onClicked: function(){ showcaseLoader.sourceComponent = rectangleShowcase }},
+        ];
     }
 }

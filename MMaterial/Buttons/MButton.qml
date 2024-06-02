@@ -85,7 +85,7 @@ Rectangle {
                 target: _private;
                 backgroundColor: _root.enabled ? (mouseArea.containsMouse ? _root.accent.transparent.p8 : "transparent") : "transparent"
                 textColor: _root.enabled ? _root.accent.main : Theme.action.disabled
-                borderColor:  _root.enabled ? (_root.mouseArea.containsMouse ? _root.accent.main : _root.accent.transparent.p48) : Theme.action.disabled
+                borderColor:  _root.enabled ? (_root.mouseArea.containsMouse ? _root.accent.main : _root.accent.transparent.p24) : Theme.action.disabled
             }
             PropertyChanges{ target: _leftIcon; color: _private.textColor }
             PropertyChanges{ target: _rightIcon; color: _private.textColor }

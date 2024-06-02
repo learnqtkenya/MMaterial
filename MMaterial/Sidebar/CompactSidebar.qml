@@ -4,7 +4,7 @@ import QtQuick.Layouts
 
 import MMaterial
 
-Rectangle {
+Item {
     id: _root
 
     default property alias container: _sidebarLayout.data
@@ -15,18 +15,6 @@ Rectangle {
 
     implicitWidth: 86 * Size.scale
     implicitHeight: parent.height
-
-    color: Theme.background.main
-
-    layer{
-        enabled: true
-        effect: MultiEffect{
-            shadowEnabled: true
-            shadowBlur: 3
-            shadowHorizontalOffset: 2
-            shadowVerticalOffset: 5
-        }
-    }
 
     ColumnLayout {
         anchors {
@@ -54,11 +42,14 @@ Rectangle {
             Layout.fillWidth: true
 
             spacing: Size.pixel4
-            section.property: "category"
             clip: true
+            currentIndex: SidebarData.currentIndex
 
-            section.delegate: SidebarSeparator{
-                required property string section
+            section {
+                property: "category"
+                delegate: SidebarSeparator{
+                    required property string section
+                }
             }
 
             delegate: SidebarCompactItem {
@@ -72,6 +63,7 @@ Rectangle {
                 model: _delegate.data.model ?? []
 
                 onClicked: typeof _delegate.data.onClicked === "function" ? _delegate.data.onClicked() : () => {}
+
             }
         }
     } 
