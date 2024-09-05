@@ -8,16 +8,20 @@ target_link_libraries(MMaterialLib PRIVATE Qt6::Quick)
 # 2. Rebuild project
 # 3. Run cmake (you have to rerun it after build)
 
-add_custom_target(RefreshAssets
-    COMMAND ${CMAKE_COMMAND} -E env python refresh_assets.py
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    COMMENT "Running the Python script to refresh assets"
-    VERBATIM
-)
+# add_custom_target(RefreshAssets
+#     COMMAND ${CMAKE_COMMAND} -E env python refresh_assets.py
+#     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+#     COMMENT "Running the Python script to refresh assets"
+#     VERBATIM
+# )
 
-# Read the contents of the file into a variable
-file(READ "./cmake_data/svgPaths.txt" SVG_ASSETS)
-file(READ "./cmake_data/pngPaths.txt" PNG_ASSETS)
+# # Read the contents of the file into a variable
+# file(READ "./cmake_data/svgPaths.txt" SVG_ASSETS)
+# file(READ "./cmake_data/pngPaths.txt" PNG_ASSETS)
+
+include(cmake/utils.cmake)
+append_files_to_variable(Icons/assets/svg svg SVG_ASSETS)
+append_files_to_variable(Icons/assets/png png PNG_ASSETS)
 
 list(APPEND MODULE_ASSETS
     # Fonts
