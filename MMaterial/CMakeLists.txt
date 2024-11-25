@@ -205,6 +205,7 @@ qt_add_qml_module(MMaterialLib
     QML_FILES ${MODULE_QML_FILES}
     RESOURCES ${MODULE_ASSETS}
     SOURCES ${MODULE_SOURCES}
+    OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/MMaterial"
 )
 
 # Read the contents of the file into a variable
