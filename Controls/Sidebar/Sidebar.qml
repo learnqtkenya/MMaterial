@@ -49,7 +49,7 @@ Rectangle {
                     height: root.parent.height
 
                     mainView.anchors {
-                        margins: UI.Size.pixel32
+                        margins: 0
                         left: root.right
                         top: root.parent.top
                         bottom: root.parent.bottom
@@ -69,7 +69,7 @@ Rectangle {
                     height: root.parent.height
 
                     mainView.anchors {
-                        margins: UI.Size.pixel32
+                        margins: 0
                         left: root.right
                         top: root.parent.top
                         bottom: root.parent.bottom
@@ -89,7 +89,7 @@ Rectangle {
                     height: UI.Size.pixel64
 
                     mainView.anchors {
-                        margins: UI.Size.pixel32
+                        margins: 0
                         left: root.parent.left
                         top: root.parent.top
                         bottom: root.top
