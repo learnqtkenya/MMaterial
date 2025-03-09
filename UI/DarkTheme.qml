@@ -55,8 +55,8 @@ UI.ThemeBase{
 
 	text: UI.PaletteText{
         primary: "#FFFFFF"
-        secondary: root.main.p500
-        disabled: root.main.p600
+        secondary: root.main.p600
+        disabled: root.main.p500
     }
 
 	background: UI.PaletteBackground{
