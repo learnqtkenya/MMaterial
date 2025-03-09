@@ -8,6 +8,7 @@ Rectangle {
     readonly property bool isEmpty: image.source.toString() === ""
 
     property alias source: image.source
+    property alias titleLabel: title
     property real size: UI.Size.pixel48
 
     property string title: "A"
@@ -70,8 +71,12 @@ Rectangle {
 	MaskedImage {
         id: image
 
-        anchors.fill: root
         visible: opacity
         radius: root.radius
+
+        anchors {
+            fill: root
+            margins: root.border.width
+        }
     }
 }
