@@ -50,6 +50,7 @@ list(APPEND UI_QML_FILES
     BaseText.qml
     EasedAnimation.qml
     ElasticAnimation.qml
+    DashedLine.qml
 )
 
 set_source_files_properties(
