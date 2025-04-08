@@ -10,6 +10,8 @@ T.Dialog {
     id: control
 
     property alias button: button
+    property alias textField: textField
+    property string inputText: textField.text
 
     property string text: ""
     property color textColor: UI.Theme.text.secondary
