@@ -47,6 +47,7 @@ Item {
             icon.iconData: _delegate.data.icon
             category: _delegate.data.category
             model: _delegate.data.model ?? []
+            hidden: _delegate.data.hidden
 
             contextMenu {
                 x: 0
