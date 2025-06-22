@@ -39,7 +39,7 @@ Item {
 
             property SidebarItem data: root.model[index]
 
-            width: UI.Size.pixel36 * 2
+            width: _delegate.data.hidden ? 0 : UI.Size.pixel36 * 2
             height: barList.height
 
             sidebarData: root.sidebarData
