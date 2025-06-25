@@ -26,6 +26,7 @@ Item {
     property bool isOpen: false
 
     property real openingSpeed: 150
+    property bool hidden: false
 
     function selectItem(subindex) : void {
 		if (ListView.view) {
@@ -43,8 +44,9 @@ Item {
 
     signal clicked
 
-    height: _listView.height + _listView.anchors.topMargin + _mainItem.height
+    height: _root.hidden ? 0 : (_listView.height + _listView.anchors.topMargin + _mainItem.height)
     width: ListView.view ? ListView.view.width : 0
+    clip: true
 
     states: [
         State{

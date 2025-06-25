@@ -19,6 +19,7 @@ T.ComboBox {
 	property string placeholderText: qsTr("Placeholder")
 	property color placeholderTextColor: UI.Theme.text.primary
 	property alias color: _textField.color
+	readonly property real delegateHeight: UI.Size.pixel46
 
 	implicitHeight: 48 * UI.Size.scale
 	implicitWidth: (UI.Size.format == UI.Size.Format.Extended ? 319 : 200) * UI.Size.scale
@@ -64,7 +65,7 @@ T.ComboBox {
 
 		rootItem: root
 		ignoreDisabledColoring: root.enabled
-		showPlaceholder: !root.focus && root.text === "" && !root.down && placeholderText !== ""
+		showPlaceholder: !root.focus && root.currentText === "" && !root.down && root.placeholderText !== ""
 		leftIcon: _leftIcon
 		iconContainer: _mainContainer
 	}
@@ -87,7 +88,7 @@ T.ComboBox {
 
 		selectedTextColor: acceptableInput ? root.accent.contrastText : UI.Theme.error.contrastText
 		selectionColor: acceptableInput ? root.accent.main : UI.Theme.error.main
-		placeholderTextColor: UI.Theme.text.primary
+		placeholderTextColor: UI.Theme.text.primary.toString() 
 
 		topPadding: root.type === Inputs.TextField.Type.Standard || root.type === Inputs.TextField.Type.Filled ? root.height * 0.3 : 0
 	}
@@ -98,7 +99,7 @@ T.ComboBox {
 		rotation: root.down ? 180 : 0
 		iconData: Media.Icons.light.keyboardArrowDown
 		size: UI.Size.pixel22
-		color: root.enabled ? UI.Theme.action.active : UI.Theme.action.disabled
+		color: root.enabled ? UI.Theme.action.active.toString() : UI.Theme.action.disabled.toString()
 
 		Behavior on rotation { NumberAnimation { duration: 200; easing.type: Easing.InOutQuad } }
 	}
@@ -107,7 +108,7 @@ T.ComboBox {
 		required property int index
 		required property var model
 
-		implicitHeight: UI.Size.pixel46
+		implicitHeight: root.delegateHeight
 		horizontalPadding: UI.Size.pixel12
 		width: ListView.view.width
 		useIcons: false
@@ -143,7 +144,7 @@ T.ComboBox {
 		contentItem: ListView {
 			id: _listView
 
-			implicitHeight: count > root.delegateCount ? root.delegateCount * root.delegate.height : contentHeight
+			implicitHeight: count > root.delegateCount ? root.delegateCount * root.delegateHeight : count * root.delegateHeight
 
 			model: root.delegateModel
 

@@ -24,6 +24,7 @@ Controls.Checkable {
     property alias contextMenu: _contextMenu
 
     property bool isOpen: false
+    property bool hidden: false
 
     function selectItem(subindex) : void {
         if (ListView.view) {
@@ -35,7 +36,8 @@ Controls.Checkable {
     }
 
     implicitWidth: ListView.view ? ListView.view.width : 0
-    implicitHeight: 54 * UI.Size.scale
+    implicitHeight: _root.hidden ? 0 : 54 * UI.Size.scale
+    clip: true
 
     checked: _root.sidebarData.currentIndex === index
     customCheckImplementation: true
