@@ -119,6 +119,14 @@ Rectangle {
 		}
 	]
 
+	QtObject {
+		id: d
+
+		property real fontSize: 0
+
+		Component.onCompleted: fontSize = root.rootItem.font.pixelSize
+	}
+
 	Rectangle {
 		anchors.bottom: root.bottom
 
@@ -158,7 +166,7 @@ Rectangle {
 		width: Math.min(implicitWidth + UI.Size.pixel8, root.rootItem.width)
 		height: implicitHeight
 
-		font.pixelSize: root.rootItem.font.pixelSize * 0.66
+		font.pixelSize: root.rootItem.font.pixelSize
 		text: root.rootItem.placeholderText
 		color: root.rootItem.placeholderTextColor
 
@@ -173,13 +181,13 @@ Rectangle {
 				PropertyChanges { target: root.iconContainer; anchors { topMargin: 0; } }
 				PropertyChanges{
 					target: _label;
-					scale: 1.4;
+					font.pixelSize: d.fontSize * 1.4;
 					y: root.rootItem.height / 2 - _label.height / 2
 					x: root.rootItem instanceof Inputs.ComboBox ?
 						0 :
 						(root.rootItem.type === Inputs.TextField.Type.Standard ?
-							 (_label.font.pixelSize * _label.scale + (root.leftIcon.visible ? root.leftIcon.width + root.rootItem.leftPadding / 2 : 0)) :
-							 (root.leftIcon.visible ? (root.leftIcon.width + root.rootItem.leftPadding ) : root.rootItem.leftPadding * 2))
+							 (root.leftIcon.visible ? root.leftIcon.size / 2 + root.rootItem.leftPadding : 0) :
+							 (root.leftIcon.visible ? (root.leftIcon.size / 2 + root.rootItem.leftPadding ) : root.rootItem.leftPadding))
 				}
 			},
 			State {
@@ -189,7 +197,7 @@ Rectangle {
 				PropertyChanges { target: root.iconContainer; anchors { topMargin: root.rootItem.type === TextField.Type.Outlined ? 0 : UI.Size.pixel16; } }
 				PropertyChanges{
 					target: _label;
-					scale: 1;
+					font.pixelSize: d.fontSize
 					x:  root.type === Inputs.TextField.Type.Standard ? 0 : root.rootItem.leftPadding - (root.leftIcon.visible ? root.leftIcon.width + UI.Size.pixel8 : 0)
 					y: root.rootItem.type === Inputs.TextField.Type.Outlined ? -height/2 : height/2;
 				}
@@ -198,7 +206,7 @@ Rectangle {
 
 		transitions: [
 			Transition {
-				NumberAnimation { properties: "x,y,scale,opacity,anchors.topMargin"; duration: 100; easing.type: Easing.InOutQuad }
+				NumberAnimation { properties: "x,y,font.pixelSize,opacity,anchors.topMargin"; duration: 100; easing.type: Easing.InOutQuad }
 			}
 		]
 	}

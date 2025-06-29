@@ -31,6 +31,11 @@ T.ComboBox {
 	leftPadding: (root.type === Inputs.TextField.Type.Standard ? 0 : d.horizontalPadding) + (_leftIcon.visible ? _leftIcon.width + UI.Size.pixel8 : 0) + (!root.mirrored || !indicator || !indicator.visible ? 0 : indicator.width + spacing)
 	rightPadding: d.horizontalPadding + (root.mirrored || !indicator || !indicator.visible ? 0 : indicator.width + spacing)
 
+	font {
+		family: UI.PublicSans.regular
+		pixelSize: UI.Size.pixel12
+	}
+
 	QtObject{
 		id: d
 

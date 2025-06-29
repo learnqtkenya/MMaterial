@@ -1,4 +1,4 @@
-import QtQuick 
+import QtQuick
 import QtQuick.Templates as T
 
 import MMaterial.UI as UI
@@ -30,11 +30,11 @@ T.TextField {
 
 	leftPadding: (d.isStandardType ? 0 : d.horizontalPadding) + (leftIcon.visible ? leftIcon.width + UI.Size.pixel8 : 0)
 	rightPadding: d.horizontalPadding + (rightIcon.visible ? rightIcon.width + UI.Size.pixel8 : 0)
-	topPadding: d.isStandardType || d.isFilledType ? root.height * 0.3 : 0
+	topPadding:  d.isFilledType ? root.height * 0.3 : (d.isStandardType ? root.height * 0.4 : UI.Size.pixel2)
 
 	font {
 		family: UI.PublicSans.regular
-		pixelSize: UI.Size.pixel16
+		pixelSize: UI.Size.pixel12
 	}
 
 	QtObject{
