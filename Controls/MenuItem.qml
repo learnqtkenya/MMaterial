@@ -47,7 +47,7 @@ T.MenuItem {
 
             anchors {
                 fill: contentItemRoot
-				rightMargin: control.indicator.visible || control.arrow.visible ? control.icon.width + control.padding * 2 : 0
+				rightMargin: control.indicator.visible || control.arrow.visible ? control.icon.width + control.rightPadding * 2 : 0
 				leftMargin: control.useIcons ? 0 : control.horizontalPadding
             }
 

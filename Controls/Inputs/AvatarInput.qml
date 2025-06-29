@@ -10,7 +10,7 @@ import MMaterial.Controls as Controls
 Item {
     id: control
 
-    readonly property bool isEmpty: image.source.toString() === ""
+	readonly property bool isEmpty: image.source.toString() === "" || removeImageAnimation.running
     readonly property url source: image.source
 
     property real size: UI.Size.scale * 128

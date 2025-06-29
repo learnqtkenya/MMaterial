@@ -13,6 +13,7 @@ T.ComboBox {
 	id: root
 
 	property int delegateCount: 5
+	property real delegateHeight: UI.Size.pixel46
 	property int type: Inputs.TextField.Type.Outlined
 	property UI.PaletteBasic accent: UI.Theme.primary
 	property Media.IconData iconData: null
@@ -149,7 +150,7 @@ T.ComboBox {
 		contentItem: ListView {
 			id: _listView
 
-			implicitHeight: count > root.delegateCount ? root.delegateCount * root.delegateHeight : count * root.delegateHeight
+			implicitHeight: count > root.delegateCount ? root.delegateCount * root.delegateHeight : contentHeight
 
 			model: root.delegateModel
 

@@ -57,7 +57,7 @@ ListView {
 			verticalAlignment: Qt.AlignVCenter
 			text: breadcrumbsDelegate.modelData
 
-			color: breadcrumbsDelegate.index === 0 ? Theme.text.primary : Theme.text.disabled
+			color: breadcrumbsDelegate.index === root.model.length - 1 ? Theme.text.disabled : Theme.text.primary
 			opacity: splitterLabelMA.pressed ? 0.7 : (splitterLabelMA.containsMouse ? 0.8 : 1)
 
 			MouseArea {
