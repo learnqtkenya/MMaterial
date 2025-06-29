@@ -3,10 +3,11 @@ import QtQuick
 import MMaterial.UI as UI
 
 UI.BaseText {
-    elide: Text.ElideRight
+	elide: Text.ElideRight
 
-    font {
+	font {
 		family: UI.PublicSans.regular
-        pixelSize: UI.Size.pixel14
-    }
+		pixelSize: UI.Size.pixel14
+		weight: Font.Normal
+	}
 }

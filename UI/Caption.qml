@@ -3,10 +3,11 @@ import QtQuick
 import MMaterial.UI as UI
 
 UI.BaseText {
-    wrapMode: Text.WordWrap
+	wrapMode: Text.WordWrap
 
-    font {
+	font {
 		family: UI.PublicSans.regular
-        pixelSize: UI.Size.pixel12
-    }
+		pixelSize: UI.Size.pixel12
+		weight: Font.Normal
+	}
 }
