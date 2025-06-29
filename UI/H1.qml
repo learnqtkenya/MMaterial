@@ -10,6 +10,5 @@ UI.BaseText {
         weight: Font.ExtraBold
         family: UI.PublicSans.extraBold
         pixelSize: UI.Size.pixel64
-		weight: Font.ExtraBold
     }
 }
