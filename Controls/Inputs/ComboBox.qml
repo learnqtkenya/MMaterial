@@ -33,7 +33,7 @@ T.ComboBox {
 	rightPadding: d.horizontalPadding + (root.mirrored || !indicator || !indicator.visible ? 0 : indicator.width + spacing)
 
 	font {
-		family: UI.PublicSans.regular
+		family: UI.Font.normalFamily
 		pixelSize: UI.Size.pixel12
 	}
 
