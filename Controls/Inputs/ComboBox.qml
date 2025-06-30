@@ -13,7 +13,6 @@ T.ComboBox {
 	id: root
 
 	property int delegateCount: 5
-	property real delegateHeight: UI.Size.pixel46
 	property int type: Inputs.TextField.Type.Outlined
 	property UI.PaletteBasic accent: UI.Theme.primary
 	property Media.IconData iconData: null
