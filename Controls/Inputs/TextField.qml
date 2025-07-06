@@ -33,7 +33,7 @@ T.TextField {
 	topPadding:  d.isFilledType ? root.height * 0.3 : (d.isStandardType ? root.height * 0.4 : UI.Size.pixel2)
 
 	font {
-		family: UI.Font.normalFamily
+		family: UI.Font.normal
 		pixelSize: UI.Size.pixel14
 	}
 	QtObject{

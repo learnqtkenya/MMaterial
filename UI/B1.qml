@@ -7,7 +7,7 @@ UI.BaseText {
 	wrapMode: Text.WordWrap
 
 	font {
-        family: UI.Font.bodyFamily
+        family: UI.Font.body
 		pixelSize: UI.Size.pixel16
 	}
 }

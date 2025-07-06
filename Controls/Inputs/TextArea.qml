@@ -28,7 +28,7 @@ T.TextArea {
 	selectedTextColor: UI.Theme.primary.contrastText
 
 	font {
-		family: UI.PublicSans.regular
+		family: UI.Font.normal
 		pixelSize: UI.Size.pixel14
 	}
 

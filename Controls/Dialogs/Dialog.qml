@@ -84,7 +84,7 @@ T.Dialog {
     }
 
     font {
-        family: UI.Font.normalFamily
+        family: UI.Font.normal
         pixelSize: UI.Size.pixel16
     }
 

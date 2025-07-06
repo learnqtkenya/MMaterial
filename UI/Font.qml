@@ -12,10 +12,10 @@ Item {
     property string italicFamilyPath:    "qrc:/set/your/own/path"
     property string monospaceFamilyPath: "qrc:/set/your/own/path"
 
-    readonly property string normalFamily: normalFamilyLoader.name
-    readonly property string bodyFamily: bodyFamilyLoader.name
-    readonly property string italicFamily: italicFamilyLoader.name
-    readonly property string monospaceFamily: monospaceFamilyLoader.name
+    readonly property string normal: normalFamilyLoader.name
+    readonly property string body: bodyFamilyLoader.name
+    readonly property string italic: italicFamilyLoader.name
+    readonly property string monospace: monospaceFamilyLoader.name
 
     FontLoader{ id: normalFamilyLoader; source: root.normalFamilyPath; }
     FontLoader{ id: bodyFamilyLoader; source: root.bodyFamilyPath;}

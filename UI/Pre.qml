@@ -6,7 +6,7 @@ UI.BaseText {
     elide: Text.ElideRight
 
     font {
-        family: UI.Font.monospaceFamily
+        family: UI.Font.monospace
         pixelSize: UI.Size.pixel14
     }
 }
