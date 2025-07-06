@@ -4,9 +4,11 @@ import QtQuick
 
 Item {
     id: root
-    // can't set a webfont path as there is a race in qt (request sent, then the user might set a font,
-    // request comes back. when offline, an error is reported and the user font is not set).
+    // can't set a webfont path by default as there is a race in qt (request sent, the app might set a font during startup,
+    // request comes back and thinks it is important. e.g., when offline, an error is reported and the app font is not set).
     // can't set an empty string either, as this is treated as a webfont (at the time of writing).
+    // we don't want to ship a qrc font by default in the lib, as this increases the library size even if the user doesn't
+    // want to use it.
     property string normalFamilyPath:    "qrc:/set/your/own/path"
     property string bodyFamilyPath:      "qrc:/set/your/own/path"
     property string italicFamilyPath:    "qrc:/set/your/own/path"
