@@ -1,3 +1,6 @@
+option(MM_PACKAGE_DEFAULT_FONTS "Include default fonts in the QML module" ON)
+
+
 qt_add_qml_module(MMaterialLib
     URI MMaterial
     VERSION 1.0
