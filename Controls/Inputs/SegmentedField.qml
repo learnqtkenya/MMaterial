@@ -15,6 +15,7 @@ FocusScope {
     property alias validator: d.validator
     property real spacing: UI.Size.pixel8
     property real segmentSize: UI.Size.pixel48
+    property real fontSize: UI.Size.pixel28
     property int inputMethodHints: Qt.ImhDigitsOnly | Qt.ImhNoPredictiveText
 
     readonly property int maxLength: 1
@@ -110,8 +111,7 @@ FocusScope {
             selectedTextColor: root.acceptableInput ? root.accent.contrastText : UI.Theme.error.contrastText
 
             font {
-                family: UI.Font.normal
-                pixelSize: UI.Size.pixel16
+                pixelSize: root.fontSize
                 bold: true
             }
 
