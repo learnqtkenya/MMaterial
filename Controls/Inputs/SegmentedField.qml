@@ -125,7 +125,7 @@ FocusScope {
                         if (!root.enabled) return UI.Theme.action.disabledBackground
                         if (!root.acceptableInput) return UI.Theme.error.main
                         if (parent.activeFocus) return root.accent.main
-                        return UI.Theme.action.disabledBackground
+                        return UI.Theme.other.divider
                     }
                 }
                 z: -1
